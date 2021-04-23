@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+<h1>{{page.title}}</h1>
+
+{% block content %}
+ <div class="prose prose-xl mx-auto">
+     <div>{{ page.content | safe}}</div>
+ </div>
+{% endblock content %}
