@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://duskness.github.io/sitemap.xml
