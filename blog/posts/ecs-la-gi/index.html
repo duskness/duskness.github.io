@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Duskness</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-b8f43988.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-820d223e.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-1996d8e8.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/posts/ecs-la-gi.md-25beeb27.js">
+		<link rel="modulepreload" href="/./_app/chunks/MarkdownLayout-88de1707.js">
+		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-31f6b8f4.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-b8f43988.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: false,
+				spa: false,
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-1996d8e8.js"),
+						import("/./_app/pages/blog/posts/ecs-la-gi.md-25beeb27.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/blog/posts/ecs-la-gi",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<header class="flex items-stretch relative"><div class="container mx-auto px-4 py-3"><div class="flex"><nav class="flex space-x-2"><a href="/">Trang chủ</a>
+		<a href="/blog">Blog</a></nav>
+	<ul class="flex ml-auto"><li><a href="https://github.com/duskness">Github</a></li></ul></div></div></header>
+<div class="prose lg:prose-xl container mx-auto"><p><strong>E</strong>ntity <strong>C</strong>omponent <strong>S</strong>ystem (<a href="https://en.wikipedia.org/wiki/Entity_component_system" rel="nofollow">wiki</a>) bao gồm:</p>
+<ul><li>Entity (thực thể): Mỗi một đối tượng trong game là một thực thể. Thực thể thường chỉ chứa định danh (ID) của đối tượng (ví dụ: Người chơi, Quái vật A, Quái vật B, Súng, Đạn, …).</li>
+<li>Component (thành phần): Chứa dữ liệu hoặc trạng thái của thực thể ở dạng “thô” (raw data). Và có thể được thay đổi runtime bởi các system.</li>
+<li>System: Nơi thực hiện các logic trong game(method, function, …)</li></ul>
+<p><strong>ECS</strong> tuân theo <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance" rel="nofollow">composition over inheritance</a> (tổng hợp thay vì kế thừa) nên cho phép code linh hoạt hơn (flexibility) và tốt cho reusable, loại bỏ các vấn đề mơ hồ của việc kế thừa đa cấp, cho phép bảo trì và mở rộng dễ dàng. </p>
+<p>Các phương pháp sử dụng ECS có tính tương thích cao và thường được kết hợp với kỹ thuật thiết kế hướng tổ chức dữ liệu (data oriented design - tránh nhầm lẫn với data driven design) để truy cập hiệu quả nhất dữ liệu.</p></div>
+
+
+
+	
+</div>
+	</body>
+</html>
