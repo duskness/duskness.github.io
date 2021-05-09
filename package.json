@@ -1,5 +1,5 @@
 {
-  "name": "~TODO~",
+  "name": "duskness",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -14,6 +14,8 @@
     "@sveltejs/kit": "next",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/typography": "^0.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.1",
     "eslint": "^7.22.0",
@@ -27,17 +29,21 @@
     "prettier-plugin-svelte": "^2.2.0",
     "rehype-autolink-headings": "^5.0.1",
     "rehype-slug": "^4.0.1",
-    "remark": "^13.0.0",
     "remark-abbr": "^1.4.1",
-    "remark-frontmatter": "^3.0.0",
     "remark-github": "^10.0.1",
-    "remark-parse": "^9.0.0",
-    "remark-stringify": "^9.0.1",
     "svelte": "^3.34.0",
     "svelte-preprocess": "^4.7.1",
     "tailwindcss": "^2.1.1",
     "unified": "^9.2.1",
-    "vite": "^2.2.3"
+    "vite": "^2.2.3",
+    "@supabase/supabase-js": "^1.8.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@fontsource/fira-mono": "^4.2.2",
+    "@lukeed/uuid": "^2.0.0",
+    "cookie": "^0.4.1"
+  }
 }

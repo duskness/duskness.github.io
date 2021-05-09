@@ -14,7 +14,7 @@ function get_all_posts() {
 			.filter((filename) => extensions.some((ext) => filename.endsWith(ext)))
 			.map((filename) => {
 				const content = fs.readFileSync(path.resolve(CONTENT_DIR, filename), { encoding: 'utf8' });
-                let slug;
+                let slug: string;
                 for(let ext of extensions) {
                     if (filename.endsWith(ext)) {
                         slug = filename.slice(0, - ext.length);

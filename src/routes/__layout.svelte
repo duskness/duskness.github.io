@@ -1,5 +1,6 @@
 <script>
 	import { setContext } from "svelte";
+	import client from '$lib/shared/supabase'
 
 	import "../app.postcss";
 
@@ -29,7 +30,8 @@
 				<a href="/">Trang chủ</a>
 				<a href="/blog">Blog</a>
 			</nav>
-			<ul class="flex ml-auto">
+			<ul class="flex ml-auto space-x-2">
+				<li><a  href="/login">Login</a></li>
 				<li><a  href="https://github.com/duskness">Github</a></li>
 			</ul>
 		</div>
