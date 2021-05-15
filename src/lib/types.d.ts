@@ -5,5 +5,5 @@ import { SupabaseClient } from '@supabase/supabase-js';
  */
 export interface Locals {
 	userid: string;
-	supabase?: SupabaseClient
+	supabase?: SupabaseClient;
 }

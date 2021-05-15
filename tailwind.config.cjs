@@ -1,13 +1,14 @@
 module.exports = {
-	mode: "jit",
-	purge: [
-		"./src/**/*.{html,js,svelte,ts}",
-	],
+	mode: 'jit',
+	purge: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {},
+		extend: {}
 	},
-	plugins:[
+	plugins: [
 		require('@tailwindcss/typography'),
 		require('@tailwindcss/aspect-ratio'),
-	],
+		require('@tailwindcss/forms')({
+			strategy: 'class'
+		})
+	]
 };

@@ -1,8 +1,8 @@
 <script>
-	import { setContext } from "svelte";
-	import client from '$lib/shared/supabase'
+	import { setContext } from 'svelte';
+	import client from '$lib/shared/supabase';
 
-	import "../app.postcss";
+	import '../app.postcss';
 
 	let title_parts = {};
 
@@ -10,17 +10,20 @@
 		title_parts[part] = title;
 	}
 
-	set_title_part("z", "Duskness");
+	set_title_part('z', 'Duskness');
 
-	setContext("layout_context", {
+	setContext('layout_context', {
 		set_title_part,
-		set_title: title => set_title_part("main", title)
+		set_title: (title) => set_title_part('main', title)
 	});
-	$: title = Object.keys(title_parts).sort().map(part => title_parts[part]).join(" - ");
+	$: title = Object.keys(title_parts)
+		.sort()
+		.map((part) => title_parts[part])
+		.join(' - ');
 </script>
 
 <svelte:head>
-    <title>{title}</title>
+	<title>{title}</title>
 </svelte:head>
 
 <header class="flex items-stretch relative">
@@ -31,11 +34,10 @@
 				<a href="/blog">Blog</a>
 			</nav>
 			<ul class="flex ml-auto space-x-2">
-				<li><a  href="/login">Login</a></li>
-				<li><a  href="https://github.com/duskness">Github</a></li>
+				<li><a href="/auth/login">Login</a></li>
+				<li><a href="https://github.com/duskness">Github</a></li>
 			</ul>
 		</div>
 	</div>
 </header>
 <slot />
-

@@ -8,6 +8,6 @@
 You can `import` it as `$lib/Example.svelte.md`.
 Just **delete** this file if you don't care.
 
-*By the way, the count is {count}.*
+_By the way, the count is {count}._
 
 <Nested />
