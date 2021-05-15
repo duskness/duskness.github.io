@@ -49,7 +49,7 @@ const userStore = writable(supabase.auth.user(), (set) => {
 
 async function signIn(provider: 'github') {
 	await supabase.auth.signIn({ provider }, {
-		redirectTo: location.origin + "/auth/callback111"
+		redirectTo: location.origin + "/auth/callback"
 	});
 }
 async function signOut() {

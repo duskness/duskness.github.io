@@ -1,8 +1,12 @@
 <script>
 	import { setContext } from 'svelte';
 	import client from '$lib/shared/supabase';
+	import { useAuth } from '$lib/client/auth';
 
 	import '../app.postcss';
+
+
+	const {user, signOut} = useAuth();
 
 	let title_parts = {};
 
@@ -25,7 +29,7 @@
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
-
+{JSON.stringify($user)}
 <header class="flex items-stretch relative">
 	<div class="container mx-auto px-4 py-3">
 		<div class="flex">
@@ -34,7 +38,14 @@
 				<a href="/blog">Blog</a>
 			</nav>
 			<ul class="flex ml-auto space-x-2">
-				<li><a href="/auth/login">Login</a></li>
+				{#if $user}
+					<li>
+						<a href="/auth/logout" on:click|preventDefault={signOut}>Logout</a>
+					</li>	
+					
+				{:else}
+					<li><a href="/auth/login">Login</a></li>
+				{/if}
 				<li><a href="https://github.com/duskness">Github</a></li>
 			</ul>
 		</div>
