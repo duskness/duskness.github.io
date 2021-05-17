@@ -1,12 +1,20 @@
-<script>
+<script lang="ts">
 	import { setContext } from 'svelte';
-	import client from '$lib/shared/supabase';
+	import supabase from '$lib/shared/supabase';
 	import { useAuth } from '$lib/client/auth';
 
 	import '../app.postcss';
 
 
 	const {user, signOut} = useAuth();
+
+	let profile = null;
+	$: if($user) {
+		supabase.rpc('get_user_info', {id: $user.id}).then(res => {
+			console.log('res :>> ', res);
+		})
+
+	}
 
 	let title_parts = {};
 
