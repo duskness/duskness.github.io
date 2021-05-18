@@ -32,18 +32,19 @@ export default defineConfig({
 	safelist: ['prose', 'prose-sm'],
 	theme: {
 		colors: {
-			primary: "#b027b0",
-			secondary: "#009688",
-			error: "#f44336",
-			success: "#4caf50",
-			alert: "#ff9800",
-			blue: "#2196f3",
-			dark: "#212121"
+			"dark-blue": "#413C69",
+			"light-blue": "#4a47a3",
+			"blue":"#709fb0",
+			"cold-blue": "#a7c5eb",
+
 		},
 		extend: {}
 	},
 	shortcuts: {
 		'form-input': ''
+	},
+	preflight: {
+		includeAll: true
 	},
 	plugins: [typography, questionMark]
 });

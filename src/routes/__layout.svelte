@@ -1,23 +1,28 @@
 <script lang="ts">
-	import { setContext } from 'svelte';
+	import { onMount, setContext } from 'svelte';
 	import supabase from '$lib/shared/supabase';
 	import { useAuth } from '$lib/client/auth';
-	import { browser } from "$app/env";
+	import { browser } from '$app/env';
 
-	import "virtual:windi.css"
+	import 'virtual:windi.css';
+	import darkMode from '$lib/useDarkTheme';
 	// if you want to enable windi devtools
-  	// if (browser) import("virtual:windi-devtools")
+	// if (browser) import("virtual:windi-devtools")
 
-
-	const {user, signOut} = useAuth();
+	const { user, signOut } = useAuth();
 
 	let profile = null;
-	$: if($user) {
-		supabase.rpc('get_user_info', {id: $user.id}).then(res => {
+	$: if ($user) {
+		supabase.rpc('get_user_info', { id: $user.id }).then((res) => {
 			console.log('res :>> ', res);
-		})
-
+		});
 	}
+
+	onMount(() => {
+		(document.querySelector('#svelte') as any).style.cssText = '';
+	});
+
+	$: if (browser) document.documentElement.classList.toggle('dark', $darkMode);
 
 	let title_parts = {};
 
@@ -35,31 +40,33 @@
 		.sort()
 		.map((part) => title_parts[part])
 		.join(' - ');
+
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
 {JSON.stringify($user)}
-<header class="flex items-stretch relative">
-	<div class="container mx-auto px-4 py-3">
-		<div class="flex">
-			<nav class="flex space-x-2">
-				<a href="/">Trang chủ</a>
-				<a href="/blog">Blog</a>
-			</nav>
-			<ul class="flex ml-auto space-x-2">
-				{#if $user}
-					<li>
-						<a href="/auth/logout" on:click|preventDefault={signOut}>Logout</a>
-					</li>	
-					
-				{:else}
-					<li><a href="/auth/login">Login</a></li>
-				{/if}
-				<li><a href="https://github.com/duskness">Github</a></li>
-			</ul>
+<div class="dark:bg-dark-blue">
+	<header class="flex items-stretch relative">
+		<div class="container mx-auto px-4 py-3">
+			<div class="flex">
+				<nav class="flex space-x-2">
+					<a href="/">Trang chủ</a>
+					<a href="/blog">Blog</a>
+				</nav>
+				<ul class="flex ml-auto space-x-2">
+					{#if $user}
+						<li>
+							<a href="/auth/logout" on:click|preventDefault={signOut}>Logout</a>
+						</li>
+					{:else}
+						<li><a href="/auth/login">Login</a></li>
+					{/if}
+					<li><a href="https://github.com/duskness">Github</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
-</header>
-<slot />
+	</header>
+	<slot />
+</div>
