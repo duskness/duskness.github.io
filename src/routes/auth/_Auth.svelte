@@ -22,24 +22,28 @@
 	import supabase from '$lib/shared/supabase';
 	import { useAuth } from '$lib/client/auth';
 	import { base } from '$app/paths';
-	import { Card } from '$lib/ui';
+	import { Card } from '$lib/components';
 
-	const {user, signIn} = useAuth();
+	const { user, signIn } = useAuth();
 
 	const github = async () => {
-		await signIn("github");
+		await signIn('github');
 	};
 
 	export let email: string = '';
 	export let state: LoginState = LoginState.Login;
 	export let signup = false;
 
+	let pwd = '';
+	let pwd2 = '';
+
 </script>
+
 {JSON.stringify($user)}
 <div class="container mx-auto">
 	<div class="flex justify-center">
 		<Card>
-			<div class="grid grid-cols-1 divide-y divide-gray-200">
+			<div class="grid grid-cols-1 divide-y divide-gray-200 ">
 				<div>
 					<h3>Login with:</h3>
 					<div class="mt-2 p-2">
@@ -65,23 +69,35 @@
 				<div>
 					{#if state === LoginState.Logout}{:else if state === LoginState.Sent}{:else if state === LoginState.Error}{/if}
 					<form
-						class="flex flex-col"
+						class="flex flex-col space-y-2" 
 						action="/api/v1/auth/{signup ? 'signup' : 'login'}"
 						method="POST"
 					>
-						<label for="email">E-Mail:</label>
-						<input
-							class="form-input"
-							type="text"
-							name="email"
-							placeholder="e.g. example@domain.com"
-							bind:value={email}
-						/>
-						<label for="password">Password</label>
-						<input class="form-input" type="password" name="password" />
+						<div class="flex flex-col">
+							<label class="tracking-wide" for="email">E-Mail:</label>
+							<input
+								class="border-b border-red-500 hover:border-red-700"
+								type="text"
+								name="email"
+								placeholder="e.g. example@domain.com"
+								bind:value={email}
+							/>
+						</div>
+						<div class="flex flex-col">
+							<label for="password">Password</label>
+							<input class="form-input" type="password" name="password" bind:value={pwd} />
+						</div>
 						{#if signup}
-							<label for="confirm_password">Confirm Password</label>
-							<input class="form-input" type="password" name="confirm_password" />
+							<div class="flex flex-col space-y-2">
+								<label for="confirm_password">Confirm Password</label>
+								<input
+									class="form-input"
+									type="password"
+									name="confirm_password"
+									bind:value={pwd2}
+								/>
+								<p class="text-red-600 text-xs italic">Password mismatch.</p>
+							</div>
 						{/if}
 						<button type="submit">{signup ? 'Signup' : 'Login'}</button>
 						<span>Don't have account? <a href="/auth/signup">Signup</a></span>

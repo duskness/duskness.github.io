@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5555,
+            "driver": "PostgreSQL",
+            "connectString": "postgres://postgres:postgres@localhost:5555/postgres",
+            "name": "Duskness",
+            "database": "postgres",
+            "username": "postgres",
+            "password": "postgres"
+        }
+    ]
+}

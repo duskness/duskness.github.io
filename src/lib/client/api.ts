@@ -22,15 +22,6 @@ async function send<Response, Body = unknown>(
 	options?: ApiOptions
 ): Promise<Response> {
 
-	console.log({
-		method,
-		body: body ? JSON.stringify(body) : undefined,
-		...options,
-		headers: {
-			Accept: 'application/json',
-			...options?.headers
-		}
-	});
 	const res = await fetch(path, {
 		method,
 		body: body ? JSON.stringify(body) : undefined,

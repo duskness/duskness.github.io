@@ -2,8 +2,11 @@
 	import { setContext } from 'svelte';
 	import supabase from '$lib/shared/supabase';
 	import { useAuth } from '$lib/client/auth';
+	import { browser } from "$app/env";
 
-	import '../app.postcss';
+	import "virtual:windi.css"
+	// if you want to enable windi devtools
+  	// if (browser) import("virtual:windi-devtools")
 
 
 	const {user, signOut} = useAuth();

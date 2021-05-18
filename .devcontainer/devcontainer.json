@@ -12,11 +12,11 @@
 			"name": "Container database",
 			"driver": "PostgreSQL",
 			"previewLimit": 50,
-			"server": "localhost",
+			"server": "db.jaotfkpykzfkxpiludha.supabase.co",
 			"port": 5432,
-			"database": "duskness",
-			"username": "duskness",
-			"password": "duskness"
+			"database": "postgres",
+			"username": "postgres",
+			"password": "idjsidji3kj2k3j2kj(JD()SJD(WJD(W"
 		}]
 	},
 
