@@ -5,7 +5,7 @@ specifiers:
   '@iarna/toml': ^2.2.5
   '@lukeed/uuid': ^2.0.0
   '@supabase/supabase-js': ^1.11.13
-  '@sveltejs/adapter-static': ^1.0.0-next.9
+  '@sveltejs/adapter-static': ^1.0.0-next.10
   '@sveltejs/kit': next
   '@types/cookie': ^0.4.0
   '@typescript-eslint/eslint-plugin': ^4.24.0
@@ -16,10 +16,10 @@ specifiers:
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.0
   gray-matter: ^4.0.3
-  mdsvex: ^0.9.5
+  mdsvex: ^0.9.6
   prettier: ~2.2.1
   prettier-plugin-svelte: ^2.3.0
-  rehype-autolink-headings: ^5.0.1
+  rehype-autolink-headings: ^5.1.0
   rehype-slug: ^4.0.1
   remark-abbr: ^1.4.1
   remark-github: ^10.1.0
@@ -40,8 +40,8 @@ dependencies:
 devDependencies:
   '@iarna/toml': 2.2.5
   '@supabase/supabase-js': 1.11.13
-  '@sveltejs/adapter-static': 1.0.0-next.9
-  '@sveltejs/kit': 1.0.0-next.107_svelte@3.38.2
+  '@sveltejs/adapter-static': 1.0.0-next.10
+  '@sveltejs/kit': 1.0.0-next.108_svelte@3.38.2
   '@types/cookie': 0.4.0
   '@typescript-eslint/eslint-plugin': 4.24.0_59c9e933fd1a489015de5df6809ac2f2
   '@typescript-eslint/parser': 4.24.0_eslint@7.26.0+typescript@4.2.4
@@ -50,10 +50,10 @@ devDependencies:
   eslint-config-prettier: 8.3.0_eslint@7.26.0
   eslint-plugin-svelte3: 3.2.0_eslint@7.26.0+svelte@3.38.2
   gray-matter: 4.0.3
-  mdsvex: 0.9.5_svelte@3.38.2
+  mdsvex: 0.9.6_svelte@3.38.2
   prettier: 2.2.1
   prettier-plugin-svelte: 2.3.0_prettier@2.2.1+svelte@3.38.2
-  rehype-autolink-headings: 5.0.1
+  rehype-autolink-headings: 5.1.0
   rehype-slug: 4.0.1
   remark-abbr: 1.4.1
   remark-github: 10.1.0
@@ -188,12 +188,12 @@ packages:
       '@supabase/storage-js': 1.0.2
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.9:
-    resolution: {integrity: sha512-yqZ+4dzi+2+2jDPHCrI7WrLdXyQ/0U56a7aFdepmodpvpxhazF203D1ez+AtTo27FjMmHjfI+q0O2FivUOosxg==}
+  /@sveltejs/adapter-static/1.0.0-next.10:
+    resolution: {integrity: sha512-DDsfyl7phvvR5FIoKSejbK8UYLMiVppx/MZdR7HIsPaL/QQqP2s0jIBlCyOwnK1GX/ENWB9Gg19xjGACB98Pwg==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.107_svelte@3.38.2:
-    resolution: {integrity: sha512-HxomGMWbuWTU8lahk98hqIL/xjW6HzNTAvTZVMnnmlMHN1N8x7+abkz4Y09Zhu8lZkZpFuqBj2UlsgPW4uJXtw==}
+  /@sveltejs/kit/1.0.0-next.108_svelte@3.38.2:
+    resolution: {integrity: sha512-4XPuN1WsL6hksYZionnO1f+aBLifWIM/gFgDgx4u1Fzhln5usgOCe0RqrN3unmhyprawRYY5/1DUPfqfVHxSVQ==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
@@ -1206,8 +1206,8 @@ packages:
     resolution: {integrity: sha512-jVU0Nr2B9X3MU4tSK7JP1CMkSvOj7X5l/GboG1tKRw52lLF1x2Ju92Ms9tNetCcbfX3hzlM73zYo2NKkWSfF/A==}
     dev: true
 
-  /mdsvex/0.9.5_svelte@3.38.2:
-    resolution: {integrity: sha512-QXgxm7F9+lGuXJx4il6FBJUVdEwBXDvmB9YVXM0BjAzpOa7le4ojOoS9mq9m8m8zvG7CWRssVIUxFROwVxEopQ==}
+  /mdsvex/0.9.6_svelte@3.38.2:
+    resolution: {integrity: sha512-AMdB7TNC40aE/XZuVhqFLWJGufUHK64/Yre88CEC9jktINp+vmYs1YsmUUM7ophl2Y+6qZwcYE4DPe1PPHVNjA==}
     peerDependencies:
       svelte: 3.x
     dependencies:
@@ -1412,8 +1412,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /rehype-autolink-headings/5.0.1:
-    resolution: {integrity: sha512-B6dmUVhtGdXLxJr3qynjRR10+f/iPJbSOtW5YyWieMvcwAm1XW5/yIYaW/9Qqr/Sd5h/Jym3dDCLJ4y6rPluWg==}
+  /rehype-autolink-headings/5.1.0:
+    resolution: {integrity: sha512-ujU4/ALnWLJQubobQaMdC0h9nkzi7HlW9SOuCxZOkkJqhc/TrQ1cigIjMFQ2Tfc/es0KiFopKvwCUGw7Gw+mFw==}
     dependencies:
       extend: 3.0.2
       hast-util-has-property: 1.0.4

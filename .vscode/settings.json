@@ -11,5 +11,9 @@
             "username": "postgres",
             "password": "postgres"
         }
-    ]
+    ],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "css.validate": false
 }

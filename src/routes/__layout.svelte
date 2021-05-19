@@ -4,8 +4,12 @@
 	import { useAuth } from '$lib/client/auth';
 	import { browser } from '$app/env';
 
-	import 'virtual:windi.css';
-	import darkMode from '$lib/useDarkTheme';
+	import 'virtual:windi-base.css';
+	import 'virtual:windi-components.css';
+	import 'virtual:windi-utilities.css';
+	// import 'virtual:windi-devtools';
+	import '../app.css';
+	import darkMode from '$lib/use/darkTheme';
 	// if you want to enable windi devtools
 	// if (browser) import("virtual:windi-devtools")
 
@@ -46,8 +50,7 @@
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
-{JSON.stringify($user)}
-<div class="dark:bg-dark-blue">
+<div>
 	<header class="flex items-stretch relative">
 		<div class="container mx-auto px-4 py-3">
 			<div class="flex">
@@ -70,3 +73,6 @@
 	</header>
 	<slot />
 </div>
+<style global lang="postcss">
+
+</style>

@@ -14,3 +14,12 @@ sudo pacman --no-confirm visual-studio-code-bin
 ```
 
 **Note**: Using [nushell](https/github.com/nushell/nushell) when it stable.
+
+## Statusbar
+
+[Polybar](https://github.com/polybar/polybar)
+
+
+## Theming
+
+[flumm/Themes](https://github.com/flumm/Themes)

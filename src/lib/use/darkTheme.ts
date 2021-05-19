@@ -11,6 +11,10 @@ function useDarkTheme(): Writable<boolean> {
     return writable(isDarkActive)
 }
 
-const darkMode = browser ? useDarkTheme() : writable(false)
 
-export default  darkMode;
+export const darkMode = browser ? useDarkTheme() : writable(false);
+
+export const darkToggle = {
+    subscribe: darkMode.subscribe,
+    toggle: ():void => darkMode.update((value) => !value)
+}

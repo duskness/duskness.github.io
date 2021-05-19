@@ -1,8 +1,7 @@
-import colors from 'windicss/colors';
-import typography from 'windicss/plugin/typography';
-import forms from 'windicss/plugin/forms';
-import createPlugin from 'windicss/plugin';
-import { defineConfig } from 'windicss/helpers';
+const colors = require('windicss/colors');
+const typography = require('windicss/plugin/typography');
+const createPlugin = require('windicss/plugin');
+const { defineConfig } = require('windicss/helpers');
 
 const questionMark = createPlugin(({ addDynamic, addUtilities }) => {
 	addDynamic('wtf', ({ Utility, Style, Keyframes }) => {
@@ -24,28 +23,28 @@ const questionMark = createPlugin(({ addDynamic, addUtilities }) => {
 	});
 });
 
-export default defineConfig({
+module.exports = defineConfig({
 	darkMode: 'class',
 	extract: {
 		include: ['./src/**/*.{html,svelte}']
 	},
 	safelist: ['prose', 'prose-sm'],
 	theme: {
-		colors: {
-			"dark-blue": "#413C69",
-			"light-blue": "#4a47a3",
-			"blue":"#709fb0",
-			"cold-blue": "#a7c5eb",
+		// colors: {
+		// 	"dark-blue": "#413C69",
+		// 	"light-blue": "#4a47a3",
+		// 	"blue":"#709fb0",
+		// 	"cold-blue": "#a7c5eb",
 
-		},
+		// },
 		extend: {}
 	},
 	shortcuts: {
-		'form-input': ''
+		// 'form-input': ''
 	},
-	preflight: {
-		includeAll: true
-	},
+	// preflight: {
+	// 	includeAll: true
+	// },
 	plugins: [typography, questionMark]
 });
 
